@@ -1,0 +1,70 @@
+{% extends 'base.html'%}
+{% block title %}Home{% endblock %}
+
+{%block content%}
+<div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide p-5 bg-dark border-bottom border-white" data-ride="carousel" >
+        <ol class="carousel-indicators" style="left: -55%;">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner padding-top" role="listbox" style="width:100%; height: 300px;" >
+            <div class="carousel-item active" >
+                <div class="float-left w-50 pt-5 pr-5 text-white">
+                    <h4 class="text-warning">SNYPE THEM SHITCOINS</h4>
+                    <p>With it's technical advantage this application is capable of buying any ERC-20 Token that goes through the designated Node.</p>
+                    <p>This advantage is a KEY element to gain the upper hand in the Crypto Currency market, Don't loose this UNIQUE opportunitty.</p>
+                </div>
+                    <img src="{{url_for('static', filename='images/Interface.png')}}" alt="" class="d-block float-right img-responsive" style="height: 300px; max-width: 50%;">
+            </div> 
+            
+            <div class="carousel-item">
+                <div class="float-left w-50 pt-5 pr-5 text-white">
+                    <h4 class="text-warning">HONEYPOT SECURITY</h4>
+                    <p>Trough some software tricks, te team has been able to develop a security layer between you and the SCAM commonly known as HONNEYPOT.</p>
+                    <p>The team belives this is a STRONG selling point in favor of this application. if you are UNLUCKY this might save you several Tokens</p>
+                </div>
+                    <img src="{{url_for('static', filename='images/app.png')}}" alt="" class="d-block float-right img-responsive" style="height: 300px; max-width: 50%;">
+            </div>
+            <div class="carousel-item">
+                <div class="float-left w-50 pt-5 pr-5 text-white">
+                    <h4 class="text-warning">CUSTOMIZE IT YOUT WAY!</h4>
+                    <p>This application supports FULL console costomization so the User is able to have fun with this application and give your instance of it a personal touch. <br>(With "full customization" we mean The console window)</p>
+                    
+                </div>
+                    <img src="{{url_for('static', filename='images/colorScheme.png')}}" alt="" class="d-block float-right img-responsive" style="height: 300px; max-width: 50%;">
+            </div>
+            
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="left: 44%;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="right: -6%;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class='text-center pt-5'>
+                <div>
+                    <h1>PURCHASE CryptoSnyper!</h1>
+                    <h4 class="text-danger">For only <del>99.<small>99</small></del> ==> 49.<small>99</small> EUR!</h4>
+                    <h5>Use code: "Halve" for the discount!<br><small>Valid only Until the end of the week</small><h5>
+                </div>
+                <div class="pt-4">
+                    <p>Go to code validation page: </p>
+                    <a class="text-white bg-info" id="checkout" href="/checkout">
+                        <button class="btn btn-primary" style="margin: auto; display: flex;padding: 7px 30px;">OMW</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-4">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/SQTcRxPsoMo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    <br>
+{%endblock%}

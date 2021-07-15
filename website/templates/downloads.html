@@ -1,0 +1,72 @@
+{% extends 'base.html'%}
+{% block title %}Downloads{% endblock %}
+
+{%block content%}
+
+<h1 class="mt-4 pb-3 center">Downloads</h1>
+<h4 class="pb-2">Download CryptoSnyper 1.50 (2021-07-09) for Windows</h4>
+<table class="table table-bordered">
+    <thead class="thead-white">
+        <tr>
+            <th scope="col">Link</th>
+            <th scope="col">Type</th>
+            <th scope="col">System</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>  
+           <!-- <th scope="row"><a href="!-- EXE --">Download</a> </th> -->
+            <th scope="row"><a href="{{url_for('auth.download_file', cual='prueba.txt')}}">Download</a> </th>
+            <td>.exe</td>
+            <td>Windows</td>
+            <td>Application Installer</td>
+        </tr>
+        <tr>
+            <th scope="row"><a href="!-- ZIP --">Download</a></th>
+            <td>.zip</td>
+            <td>Windows</td>
+            <td>Application Installer compressed to .zip Format</td>
+        </tr>
+        <tr>
+            <th scope="row"><a href="!-- RAR --">Download</a></th>
+            <td>.rar</td>
+            <td>Windows</td>
+            <td>Application Installer compressed to .rar Forma</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4 class="pb-2 pt-4">Download CryptoSnyper 1.21 unstable (2021-02-09) for Windows</h4>
+<table class="table table-bordered">
+    <thead class="thead-white">
+        <tr>
+            <th scope="col">Link</th>
+            <th scope="col">Type</th>
+            <th scope="col">System</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row"><a href="!-- EXE --">Download</a> </th>
+            <td>.exe</td>
+            <td>Windows</td>
+            <td>Application Installer</td>
+        </tr>
+        <tr>
+            <th scope="row"><a href="!-- ZIP --">Download</a></th>
+            <td>.zip</td>
+            <td>Windows</td>
+            <td>Application Installer compressed to .zip Format</td>
+        </tr>
+        <tr>
+            <th scope="row"><a href="!-- RAR --">Download</a></th>
+            <td>.rar</td>
+            <td>Windows</td>
+            <td>Application Installer compressed to .rar Forma</td>
+        </tr>
+    </tbody>
+</table>
+
+{%endblock%}
