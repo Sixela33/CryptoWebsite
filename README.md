@@ -1,5 +1,7 @@
 # CryptoWebsite
-This Website was designed to Promote and sell the application in the CryptoSnyper repository
+This Website was designed to Promote and sell the application in the CryptoSnyper repository.
+  I used the FLASK framework to program the backend.
+
 
 ## Features
 
