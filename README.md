@@ -1,4 +1,4 @@
-# CryptoWebsite
+# FLASK Website
 This Website was designed to Promote and sell the application in the CryptoSnyper repository.
   I used the FLASK framework to program the backend.
 
@@ -10,9 +10,11 @@ This Website was designed to Promote and sell the application in the CryptoSnype
   such as the ability to enter the 'Downloads' tab.
   Another posibility opend by this feature is the capability to let the user retrieve their product key if they lost/ forgot it.
   
-  ### Discount Codes
-  In the checkout tab there is the option to introduce a code, this codes are set by the ADMIN USER. This codes redirect the user to a set page
-  (Preferably to the page where the user can purchase theproduct at the accorded price).
+  ### Buy Product
+  Through this web application the users are able to Buy a copy of an application for a cetrain period of time, when this is done
+  the data is stord in the database and it can be checked throush the API that's responsable for the product's validation at startup.
+  
+  ### Product validation API
 
   ### Downloads
    the page is able to send the files in the downloads folder. Right now there is only a .txt file, but if it is launched, it wil send the Installer.
