@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block title %}
+    CryptoSnyper Mis Codigos
+{% endblock %}
+
+{% block content %}
+<body>
+    <br>
+    <div>
+        {% if lan=="Español" %}
+	<p class="text-sm-center pr-2">Cada clave se puede iniciar en SOLO un ordenador, asi que utilizalas con cuidado. Si posees una clave PERMANENTE podes solicitar el cambio de ordenador enviando un mail al Email de contacto para comunicarte con un administrador.</p>
+        <div class="container">
+            <form method="POST" class="form-register">
+		<br>
+                <strong>
+                    <p>introduzca su billetera para ver sus códigos activos: </p>
+                </strong>
+                <input type="text" id="wallet" style="width:30%" name="wallet" required>
+                <input type="submit" name="submit_button" value='Buscar Códigos' class="btn btn-primary">
+
+            </form>
+        </div>
+        <br>
+        <table class="table table-hove table-stripedr">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">CÓDIGO</th>
+                    <th scope="col">TIEMPO RESTANTE</th>
+                    <th scope="col">DESCARGA</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% if mostrar %}
+                {% for item in items %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.code }}</td>
+                    <td>{{ item.time_left }} </td>
+                    
+                    <td><a href="{{url_for('descargar_archivo')}}"> <button class="btn btn-outline btn-success">Descargar CryptoSnyper</button></a></td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+
+        {% else %}
+
+        <div class="container">
+            <form method="POST" class="form-register">
+
+                <strong>
+                    <p>INtroduce Your Wallet to see Your Active Keys: </p>
+                </strong>
+                <input type="text" id="wallet" style="width:30%" name="wallet" required>
+                <input type="submit" name="submit_button" value='Buscar Códigos' class="btn btn-primary">
+
+            </form>
+        </div>
+        <br>
+        <table class="table table-hove table-stripedr">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">CODE</th>
+                    <th scope="col">TIME LEFT</th>
+                    <th scope="col">DOWNLOAD</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% if mostrar %}
+                {% for item in items %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.code }}</td>
+                    <td>{{ item.time_left }} </td>
+                    
+                    <td><a href="{{url_for('descargar_archivo')}}"> <button class="btn btn-outline btn-success">Download CryptoSnyper</button></a></td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+
+
+</body>
+
+{% endblock %}

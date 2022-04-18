@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block title %}
+    CryptoSnyper Checkout
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        {% if lan == "Español"%}
+       <div class="container">
+           <br>
+           <h1>De que forma deseas validar tu clave de producto?</h1>
+           <br>
+           <form method="post">
+            <input type="submit" name="submit_button" value="Diaria [{{price[0]}} BNB]">
+            <input type="submit" name="submit_button" value="Mensual [{{price[1]}} BNB]">
+            <input type="submit" name="submit_button" value="Vez única [{{price[2]}} BNB]">
+            </form>
+       </div>
+       <br>
+        {% if show %}
+            <p>Envía <a style="color: rgb(223, 0, 0);"> {{ precio }}</a>  a esta dirección para recibir tu código!! (Si se envía extra se sumará a su tiempo, si envía de menos RIP)</p>
+            <strong>{{ add }}</strong>
+        {% endif %}
+        <br>
+        <div style='color:black; margin-top: 2vw;'>
+
+            <form method="POST" class="form-register" >
+                {{ confirm.hidden_tag() }}
+                <br>
+               
+                    <h3>Confirma que haz realizado el pago para recibir tu código:</h3>
+                    <br>
+                    {{ confirm.address_es.label() }}
+                    {{ confirm.address_es(class="form-control", placeholder='Dirección de la billetera') }}
+                    <br>
+                    {{ confirm.link_bscscan_es.label() }}
+                    {{ confirm.link_bscscan_es(class="form-control", placeholder='Link de transaccion de BscScan') }}
+                    <br>
+                    {{ confirm.codigo_referido_es( placeholder='Referido: ', style="width: 42%; margin-right:10%") }}
+                    {{ confirm.clave_secreta_es(placeholder="contraseña temporal", style="width: 42%") }}
+                    <br>
+                    <br>
+                    {{confirm.submit_button(class="btn btn-lg btn-block btn-primary") }}
+            </form>
+        </div>
+        {% else %}
+        <div class="container">
+            <br>
+            <h1>For how long do you Wish to Validate your Key?</h1>
+            <br>
+            <form method="post">
+             <input type="submit" name="submit_button" value="1 Day [{{price[0]}} BNB]">
+             <input type="submit" name="submit_button" value="1 Month [{{price[1]}} BNB]">
+             <input type="submit" name="submit_button" value="Lifetime [{{price[2]}} BNB]">
+             </form>
+        </div>
+        <br>
+         {% if show %}
+             <p>Send <a style="color: rgb(223, 0, 0);"> {{ precio }}</a>  to this address to recive your code!! (If you send extra, it will add up, if you send less, RIP)</p>
+             <strong>{{ add }}</strong>
+         {% endif %}
+         <br>
+         <div style='color:black; margin-top: 2vw;'>
+ 
+             <form method="POST" class="form-register" >
+                 <br>
+                
+                    <h3>Validate your receipt to get your code:</h3>
+                    <br>
+                    {{ confirm.address_en.label() }}
+                    {{ confirm.address_en(class="form-control", placeholder='Wallet Address') }}
+                    <br>
+                    {{ confirm.link_bscscan_en.label() }}
+                    {{ confirm.link_bscscan_en(class="form-control", placeholder='BscScan transaction hash') }}
+                    <br>
+                    {{ confirm.codigo_referido_en( placeholder='Referral code: ', style="width: 42%; margin-right:10%") }}
+                    {{ confirm.clave_secreta_en(placeholder="Temporary password", style="width: 42%") }}
+                    <br>
+                    <br>
+
+                    {{confirm.submit_button(class="btn btn-lg btn-block btn-primary") }}
+ 
+             </form>
+         </div>
+
+         {% endif %}
+    </div>
+</body>
+{% endblock %}

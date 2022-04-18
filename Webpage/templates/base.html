@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name = 'viewport' content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+      />
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+      />
+      <link rel="icon" href="{{url_for('static_dir', path='/imagenes/Crosair.png')}}">
+      <title>{% block title %}{% endblock %}</title>
+    </head>
+
+    <body style="background-color: lightskyblue;">
+        <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
+            <button class="navbar-toggler" type="button" data-toggle='collapse' data-target="#navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <img src="{{url_for('static_dir', path='/imagenes/ToyChikito.png')}}" alt="" width="55px" class="text-right">
+            <h3 class="text-white text-left pl-2">CryptoSnyper</h3>
+            <div class="collapse navbar-collapse" id="navbar">
+                <div class="navbar-nav pl-5" style="font-size: larger;">
+                    {% if lan == "Español" %}
+                    <a class="text-black-50 nav-item nav-link pr-2 pl-2"  href="{{ url_for('home_page') }}"><b>Home</b></a>
+                    <a class="text-black-50 nav-item nav-link pr-3 pl-3" href="{{ url_for('code_management') }}"><b>Mis codigos</b></a>
+                    <a class="text-black-50 nav-item nav-link pr-3 pl-3" href="{{ url_for('referidos_info') }}"><b>Referidos</b></a>
+                    <a class="nav-item nav-link pr-2 pl-2 " style="color:#e6e3e3" href="{{ url_for('pagina_compra') }}"><b>Comprar CryptoSnyper</b></a>
+                    {% else %}
+                    <a class="text-black-50 nav-item nav-link pr-2 pl-2"  href="{{ url_for('home_page') }}"><b>Home</b></a>
+                    <a class="text-black-50 nav-item nav-link pr-3 pl-3" href="{{ url_for('code_management') }}"><b>My Codes</b></a>
+                    <a class="text-black-50 nav-item nav-link pr-3 pl-3" href="{{ url_for('referidos_info') }}"><b>Referral program</b></a>
+                    <a class="nav-item nav-link pr-2 pl-2 " style="color:#e6e3e3" href="{{ url_for('pagina_compra') }}"><b>Buy CryptoSnyper</b></a>
+                    {% endif %}
+                </div>
+            </div>
+            <form action="{{ url_for('change_language') }}" method="POST">
+                {% if lan == "Español" %}
+                <label for="lenguajes" class="mr-2 mt-2" style="color: white;"> Lenguaje: </label>
+                <select onchange='this.form.submit()'  id="lenguajes" name="lenguajes">
+                    <option value= "Español" SELECTED>Español</option>
+                    <option value= "English">English</option>
+                </select>
+                <img style="width: 30px;" class="pb-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/200px-Flag_of_Argentina.svg.png" alt="">
+                {% else %}
+                <label for="lenguajes" class="mr-2 mt-2" style="color: white;"> Languaje: </label>
+                <select onchange="this.form.submit();" id="lenguajes" name="lenguajes">
+                    <option value= "Español">Español</option>
+                    <option value= "English" SELECTED>English</option>
+                </select>
+                <img style="width: 30px;" class="pb-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%283-2_aspect_ratio%29.svg/1280px-Flag_of_Australia_%283-2_aspect_ratio%29.svg.png" alt="">
+                {% endif %}
+            </form>
+        </nav>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages%}
+                    {% if category == 'error' %}
+                        <div class="alert alert-danger alert-dismissable fade show" role='alert' style="text-align: center;">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss='alert'>
+                                <span aria-hidden='true'>&times;</span>
+                            </button>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-success alert-dismissable fade show" role='alert' style="text-align: center;">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss='alert'>
+                                <span aria-hidden='true'>&times;</span>
+                            </button>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        {% block content %}
+        {% endblock %}
+
+        <footer>
+            <nav class="navbar fixed-bottom bg-info p-4">
+                <p class="float-right">CryptoSnyper®</p>
+                <p>Contacto: sixela33.contacto@gmail.com</p>
+            </nav>
+        </footer>
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"
+        ></script>
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"
+        ></script>
+        <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+        ></script>
+</html>

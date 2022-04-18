@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block title %}
+    CryptoSnyper Referidos
+{% endblock %}
+{% block content %}
+<body>
+    <br>
+    {% if lan== "Español" %}
+    <div class="container text-center">
+        <h1>Refiere la aplicación para ganar BNB!!</h1>
+        <br>
+        <h4>Los pagos se realizarán todos los viernes y la parte para el revendedor es del 15%!!!</h4>
+        <br>
+        <p> Tu código de referido: {{ codigo }}</p>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Referidos Diarios</th>
+                    <th scope="col">Referidos Mensuales</th>
+                    <th scope="col">Referidos Finales</th>
+                    <th scope="col">Valor en BNB</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Esta Semana</b></td>
+                    <td>{{ referidos_pendientes[0] }}</td>
+                    <td>{{ referidos_pendientes[1] }}</td>
+                    <td>{{ referidos_pendientes[2] }}</td>
+                    <td>{{ referidos_pendientes[3] }}</td>
+                </tr>
+                <tr>
+                    <td><b>Totales</b></td>
+                    <td>{{ referidos_totales[0] }}</td>
+                    <td>{{ referidos_totales[1] }}</td>
+                    <td>{{ referidos_totales[2] }}</td>
+                    <td>{{ referidos_totales[3] }}</td>
+                </tr>
+            </tbody>
+        </div>
+        {% else %}
+        <div class="container text-center">
+            <h1>Refer the Applicattion to earn BNB!!</h1>
+            <br>
+            <h4>The payments are made every Friday and the Reseller's cut is 15%!!!</h4>
+            <br>
+            <p> Your referral code is your wallet Address (MUST HAVE A VALID FINAL  KEY TO BE ABLE TO RESELL)</p>
+            <form  method="POST">
+    
+                <div style="width: 100%;" class="form-register">
+    
+                    <input type="text" id="wallet" style="width:30%; position: sticky;" name="wallet" required>
+                    <input type="submit" name="submit_button" value='Ver referidos' class="btn btn-primary">
+                    
+                </div>
+            </form>
+            <br>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Daily referrals</th>
+                        <th scope="col">Monthly referrals</th>
+                        <th scope="col">Final referrals</th>
+                        <th scope="col">BNB Value</th>
+                        
+    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>This Week</b></td>
+                        <td>{{ referidos_pendientes[0] }}</td>
+                        <td>{{ referidos_pendientes[1] }}</td>
+                        <td>{{ referidos_pendientes[2] }}</td>
+                        <td>{{ referidos_pendientes[3] }}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Total</b></td>
+                        <td>{{ referidos_totales[0] }}</td>
+                        <td>{{ referidos_totales[1] }}</td>
+                        <td>{{ referidos_totales[2] }}</td>
+                        <td>{{ referidos_totales[3] }}</td>
+                    </tr>
+                </tbody>
+            </div>
+
+        {% endif %}
+    </div>
+    
+</body>
+{% endblock %}

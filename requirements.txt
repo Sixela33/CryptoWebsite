@@ -1,0 +1,7 @@
+Flask==2.0.1
+Flask-RESTful==0.3.9
+Flask-SQLAlchemy==2.5.1
+Flask-WTF==1.0.0
+WTForms==3.0.0
+web3==5.20.0
+requests==2.25.1
