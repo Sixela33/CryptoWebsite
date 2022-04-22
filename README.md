@@ -4,7 +4,7 @@ I created this website to promote and sell a Sofware application (Code not avail
 
 I used Flask for the backend and html and css (bootstrap) for the frontend.
 
-##technologies
+## technologies
 
  - Python
  - Flask
