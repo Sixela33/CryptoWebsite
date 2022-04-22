@@ -4,6 +4,14 @@ I created this website to promote and sell a Sofware application (Code not avail
 
 I used Flask for the backend and html and css (bootstrap) for the frontend.
 
+##technologies
+
+ - Python
+ - Flask
+ - SQL
+ - HTML
+ - Bootstrap
+ 
 ## Objectve
 
 This website's objective is to sell and validate product keys. To be able to do this it needs to be able to:
