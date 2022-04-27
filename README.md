@@ -4,7 +4,7 @@ I created this website to promote and sell a Sofware application (Code not avail
 
 I used Flask for the backend and html and css (bootstrap) for the frontend.
 
-## technologies
+## Technologies
 
  - Python
  - Flask
@@ -28,4 +28,9 @@ I used MySQL to create and manage the database.
  
 This makes flask a great framework to develop this Website because it makes creating a functioning APY very easy and convenient.
 
-All this functionalitys have been implemented and work correctly. If there are any doubts, you an allways contact me :3
+## Setup
+
+  ``` $ pip install -r requirements.txt ```
+ 
+ Install all requirements in the "Requirements.txt" File and you are ready to go!
+ run "run.py" To start the server
