@@ -34,3 +34,7 @@ This makes flask a great framework to develop this Website because it makes crea
  
  Install all requirements in the "Requirements.txt" File and you are ready to go!
  run "run.py" To start the server
+ 
+ ## Showcase
+ 
+ https://www.youtube.com/watch?v=ytXOr0v2fSo
