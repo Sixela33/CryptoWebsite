@@ -1,8 +1,11 @@
 # Flask-Website
+This was my first attempt at making a website
 
-I created this website to promote and sell a Sofware application (Code not available).
+I created this website to promote and sell a Sofware application.
 
 I used Flask for the backend and html and css (bootstrap) for the frontend.
+
+
 
 ## Technologies
 
