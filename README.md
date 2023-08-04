@@ -1,5 +1,4 @@
 # Flask-Website
-This was my first attempt at making a website
 
 I created this website to promote and sell a Sofware application.
 
